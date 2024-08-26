@@ -5,11 +5,11 @@ pipeline {
          jdk 'java'
     }
     stages {
-         stage('Stage-0 : Static Code Analysis Using SonarQube') { 
+        /* stage('Stage-0 : Static Code Analysis Using SonarQube') { 
            steps {
                 sh 'mvn clean verify sonar:sonar'
             }
-        }
+        }*/
         stage('Stage-1 : Clean') { 
             steps {
                 sh 'mvn clean'
@@ -45,7 +45,7 @@ pipeline {
                 sh 'mvn package'
             }
         }
-           stage('Stage-8 : Deploy an Artifact to Artifactory Manager i.e. Nexus/Jfrog') { 
+           /*stage('Stage-8 : Deploy an Artifact to Artifactory Manager i.e. Nexus/Jfrog') { 
             steps {
                 sh 'mvn deploy'
             }
@@ -60,7 +60,7 @@ pipeline {
             steps {
                 sh 'curl --retry-delay 10 --retry 5 "http://54.221.48.136:8080/cbapp"'
             }
-        }
+        }*/
 
 
     }
